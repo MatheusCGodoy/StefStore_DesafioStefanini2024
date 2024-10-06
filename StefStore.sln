@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StefStore", "StefStore\StefStore.csproj", "{6D48F791-9A0A-4D5E-9825-CD6A09A5B406}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Presentation", "1.Presentation", "{DA814AC7-FC52-47D8-A276-29EB6D78272B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Application", "2.Application", "{0B698293-2CC6-4CC5-A857-45BE2602A13A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Domain", "3.Domain", "{2086A92B-F855-41FC-AB7F-365E95C58ECF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Data", "4.Data", "{02799C67-D992-4892-B2D6-218B52FBE4ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Tests", "5.Tests", "{6542DE4B-A635-4A75-8ECC-41B88AD75868}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D48F791-9A0A-4D5E-9825-CD6A09A5B406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D48F791-9A0A-4D5E-9825-CD6A09A5B406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D48F791-9A0A-4D5E-9825-CD6A09A5B406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D48F791-9A0A-4D5E-9825-CD6A09A5B406}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6D48F791-9A0A-4D5E-9825-CD6A09A5B406} = {DA814AC7-FC52-47D8-A276-29EB6D78272B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8A3407A-5FE6-4B38-9171-EF4BF8585BCC}
+	EndGlobalSection
+EndGlobal
