@@ -20,7 +20,7 @@ public class Pedido
     public DateTime DataCriacao { get; set; }
     [Required]
     public bool Pago { get; set; }
-    public ICollection<ItensPedido> ItensPedido { get; set; }
+    public ICollection<ItensPedido> ItensPedido { get; set; } = new List<ItensPedido>();
 
     public Pedido() { }
 

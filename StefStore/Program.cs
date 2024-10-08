@@ -1,8 +1,8 @@
 using Application.Interfaces.Services;
 using Application.Services;
+using Domain.AutoMapper;
 using Domain.Interfaces.Repositories;
 using Domain.Interfaces.Services;
-using Domain.Profiles;
 using Domain.Services;
 using Infra.Context;
 using Infra.Repositories;
@@ -18,6 +18,7 @@ builder.Services.AddDbContext<StoreDbContext>(options =>
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddAutoMapper(typeof(ProdutoProfile));
+builder.Services.AddAutoMapper(typeof(PedidoProfile));
 
 ConfigureServices(builder.Services);
 

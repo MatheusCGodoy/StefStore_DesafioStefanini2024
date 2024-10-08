@@ -1,8 +1,11 @@
-﻿using Domain.Entities;
+﻿using Domain.DTOs;
+using Domain.Entities;
 
 namespace Application.Interfaces.Services;
 
 public interface IPedidoAppService
 {
-    //Pedido CreatePedido(CreatePedidoModel pedidoModel);
+    Task<PedidoDTO> CreatePedido(CreatePedidoDTO pedidoDTO);
+    Task<ReadPedidoDTO?> GetPedidoById(int id);
+    Task<IEnumerable<ReadPedidoDTO>> GetAllPedidos();
 }

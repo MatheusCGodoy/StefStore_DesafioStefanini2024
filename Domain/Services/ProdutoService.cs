@@ -28,4 +28,9 @@ public class ProdutoService : IProdutoService
         var produtos = await _produtoRepository.GetAllProdutos();
         return _mapper.Map<List<ProdutoDTO>>(produtos);
     }
+
+    public async Task<Produto?> GetProdutoById(int id)
+    {
+        return await _produtoRepository.GetProdutoById(id);
+    }
 }

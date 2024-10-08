@@ -14,7 +14,7 @@ public class Produto
     [Required]
     [Column(TypeName = "decimal(10, 2)")]
     public decimal Valor { get; set; }
-    public ICollection<ItensPedido> ItensPedido { get; set; }
+    public ICollection<ItensPedido> ItensPedido { get; set; } = new List<ItensPedido>();
 
     public Produto() { }
 

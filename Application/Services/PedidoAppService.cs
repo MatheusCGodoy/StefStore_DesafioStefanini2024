@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces.Services;
+using Domain.DTOs;
 using Domain.Entities;
 using Domain.Interfaces.Services;
 
@@ -13,8 +14,18 @@ public class PedidoAppService: IPedidoAppService
         _pedidoService = pedidoService;
     }
 
-    //public Pedido CreatePedido(CreatePedidoModel pedidoModel)
-    //{
-    //    return _pedidoService.CreatePedido(pedidoModel);
-    //}
+    public async Task<PedidoDTO> CreatePedido(CreatePedidoDTO pedidoDTO)
+    {
+        return await _pedidoService.CreatePedido(pedidoDTO);
+    }
+
+    public async Task<IEnumerable<ReadPedidoDTO>> GetAllPedidos()
+    {
+        return await _pedidoService.GetAllPedidos();
+    }
+
+    public async Task<ReadPedidoDTO?> GetPedidoById(int id)
+    {
+        return await _pedidoService.GetPedidoById(id);
+    }
 }

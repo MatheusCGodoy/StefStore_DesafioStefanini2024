@@ -7,7 +7,7 @@ using AutoMapper;
 using Domain.DTOs;
 using Domain.Entities;
 
-namespace Domain.Profiles;
+namespace Domain.AutoMapper;
 
 public class ProdutoProfile : Profile
 {

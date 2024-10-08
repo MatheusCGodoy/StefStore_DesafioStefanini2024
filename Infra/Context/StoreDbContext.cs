@@ -21,8 +21,6 @@ public class StoreDbContext : DbContext
         };
         modelBuilder.Entity<Produto>().HasData(produtos);
 
-        //modelBuilder.Entity<Pedido>();
-
         modelBuilder.Entity<ItensPedido>()
             .HasOne(itemPedido => itemPedido.Pedido)
             .WithMany(pedido => pedido.ItensPedido)

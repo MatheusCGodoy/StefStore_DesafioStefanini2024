@@ -2,6 +2,7 @@
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Application.Interfaces.Services;
+using Domain.DTOs;
 
 namespace StefStore.Controllers;
 
@@ -24,35 +25,42 @@ public class PedidoController : Controller
         _mapper = mapper;
     }
 
-    //[HttpPost]
-    //public IActionResult CreatePedido(CreatePedidoModel pedidoModel)
-    //{
-    //    var result = _pedidoAppService.CreatePedido(pedidoModel);
-    //    if (result == null)
-    //    {
-    //        return BadRequest();
-    //    }
-        
-    //    var pedido = _mapper.Map<ReadPedidoModel>(result);
+    [HttpPost]
+    public async Task<IActionResult> CreatePedido([FromBody] CreatePedidoDTO pedidoModel)
+    {
+        try
+        {
+            var result = await _pedidoAppService.CreatePedido(pedidoModel);
+            if (result == null)
+            {
+                return BadRequest();
+            }
 
-    //    return CreatedAtAction(nameof(CreatePedido), new { Id = pedido.Id }, pedido);
-    //}
+            var pedido = _mapper.Map<Pedido>(result);
 
-    //[HttpGet]
-    //public IEnumerable<Pedido> GetPedidos()
-    //{
-    //    return _mapper.Map<List<ReadPedidoModel>>(_context.Pedidos.ToList());
-    //}
+            return CreatedAtAction(nameof(CreatePedido), new { Id = pedido.Id }, pedido);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
 
-    //[HttpGet("{pedidoId}")]
-    //public IActionResult GetPedidoById(int pedidoId)
-    //{
-    //    Pedido pedido = _context.Pedidos.FirstOrDefault(pedido => pedido.Id == pedidoId);
-    //    if (pedido != null)
-    //    {
-    //        ReadPedidoModel pedidoModel = _mapper.Map<ReadPedidoModel>(pedido);
-    //        return Ok(pedidoModel);
-    //    }
-    //    return NotFound();
-    //}
+    [HttpGet]
+    public async Task<IEnumerable<ReadPedidoDTO>> GetPedidos()
+    {
+        var pedidos = await _pedidoAppService.GetAllPedidos();
+        return pedidos;
+    }
+
+    [HttpGet("{pedidoId}")]
+    public async Task<IActionResult> GetPedidoById(int pedidoId)
+    {
+        var pedidoDTO = await _pedidoAppService.GetPedidoById(pedidoId);
+        if (pedidoDTO != null)
+        {
+            return Ok(pedidoDTO);
+        }
+        return NotFound();
+    }
 }
